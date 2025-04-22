@@ -59,7 +59,7 @@
             </li>
           </ol>
           <form class="filter__catalog" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset class="filter__infra fieldset-reset">
+            <fieldset class="filter__fieldset fieldset-reset">
               <legend class="filter__legend legend-reset">Инфраструктура:</legend>
               <ul class="filter__list list-reset">
                 <li class="filter__item">
@@ -85,7 +85,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter__housing fieldset-reset">
+            <fieldset class="filter__fieldset fieldset-reset">
               <legend class="filter__legend legend-reset">Тип жилья:</legend>
               <ul class="filter__list list-reset">
                 <li class="filter__item">
@@ -113,117 +113,104 @@
             </fieldset>
             <fieldset class="filter__slider fieldset-reset">
               <legend class="filter__legend legend-reset">Стоимость, ₽:</legend>
-              <label class="filter__slider-from">
-                <input class="filter__slider-min" name="from" type="number" value="0">
-                <span class="filter__slider-placeholder">от</span>
-              </label>
-              <label class="filter__slider-to">
-                <input class="filter__slider-max" name="to" type="number" value="9000">
-                <span class="filter__slider-placeholder">до</span>
-              </label>
-              <div class="filter__slider-range">
-                <div class="filter__slider-bar">
-                  <button class="filter__slider-toggle" id="toggle-min" type="button">
+              <div class="filter__inputs-wrapper">
+                <label class="filter__slider-label">
+                  <input class="filter__slider-input" name="from" type="number" value="0">
+                  <span class="filter__slider-placeholder">от</span>
+                </label>
+                <label class="filter__slider-label">
+                  <input class="filter__slider-input filter__slider-input--max" name="to" type="number" value="9000">
+                  <span class="filter__slider-placeholder">до</span>
+                </label>
+              </div>
+              <div class="filter__slider-scale">
+                <div class="filter__slider-range">
+                  <button class="filter__slider-toggle filter__slider-toggle--min" id="toggle-min button-reset" type="button">
                     <span class="visually-hidden">Изменить минимальную цену.</span>
                   </button>
-                  <button class="filter__slider-toggle" id="toggle-max" type="button">
+                  <button class="filter__slider-toggle filter__slider-toggle--max button-reset" id="toggle-max" type="button">
                     <span class="visually-hidden">Изменить максимальную цену.</span>
                   </button>
                 </div>
               </div>
             </fieldset>
             <div class="filter__buttons-wrapper">
-              <button class="filter__button filter__button--apply button-reset" type="submit">Применить</button>
-              <button class="filter__button filter__button--reset button-reset" type="reset">Сбросить</button>
+              <button class="filter__button button_blue button" type="submit">Применить</button>
+              <button class="filter__button button_transparent button" type="reset">Сбросить</button>
             </div>
           </form>
         </section>
         <section class="catalog" data-test="catalog">
           <div class="catalog__filter">
             <h2 class="visually-hidden">Каталог гостиниц</h2>
-            <p class="catalog__title">Найдено гостиниц: <span>4</span></p>
-            <div class="catalog__filter-wrapper">
-              <select class="catalog__filter-sorting" name="catalog__filter-sorting">
-                <option value="cheap">Сначала дешёвые</option>
-                <option value="expensive">Сначала дорогие</option>
-                <option value="popular">Сначала популярные</option>
-                <option value="comfortable">Сначала комфортные</option>
-              </select>
-              <div class="catalog__view-buttons">
-                <a class="catalog__view-trigger link-reset" href="catalog.html?view=tile">
-                  <span class="visually-hidden">Показать таблицей</span>
-                </a>
-                <a class="catalog__view-trigger link-reset" href="catalog.html?view=card">
-                  <span class="visually-hidden">Показать карточкой</span>
-                </a>
-                <a class="catalog__view-trigger link-reset" href="catalog.html?view=list">
-                  <span class="visually-hidden">Показать списком</span>
-                </a>
-              </div>
+            <p class="catalog__title">Найдено гостиниц: <span>38</span></p>
+            <select class="catalog__filter-sorting" name="catalog__filter-sorting">
+              <option value="cheap">Сначала дешёвые</option>
+              <option value="expensive">Сначала дорогие</option>
+              <option value="popular">Сначала популярные</option>
+              <option value="comfortable">Сначала комфортные</option>
+            </select>
+            <div class="catalog__view-buttons">
+              <a class="catalog__view-toggle catalog__view-toggle--active link-reset" href="catalog.html?view=tile">
+                <img src="img/sprite/catalog-toggle-table-icon.svg" alt="" width="16" height="14">
+                <span class="visually-hidden">Показать таблицей</span>
+              </a>
+              <a class="catalog__view-toggle link-reset" href="catalog.html?view=card">
+                <img src="img/sprite/catalog-toggle-card-icon.svg" alt="" width="16" height="14">
+                <span class="visually-hidden">Показать карточкой</span>
+              </a>
+              <a class="catalog__view-toggle link-reset" href="catalog.html?view=list">
+                <img src="img/sprite/catalog-toggle-list-icon.svg" alt="" width="16" height="14">
+                <span class="visually-hidden">Показать списком</span>
+              </a>
             </div>
           </div>
           <ul class="catalog__hotels-list list-reset">
             <li class="catalog__hotels-item hotel-card">
-              <a class="hotel-card__link link-reset" href="#">
-                <img class="hotel-card__image" src="#" alt="Фотография гостиницы">
-              </a>
-              <a class="hotel-card__title" href="#">
-                <h3 class="hotel-card__title">Amara Resort &amp; Spa</h3>
-              </a>
+              <img class="hotel-card__image" src="img/catalog-card-hotel-1@2x.jpg" width="300" height="212" alt="Фотография гостиницы">
+              <h3 class="hotel-card__title">Amara Resort &amp; Spa</h3>
               <p class="hotel-card__type">Гостиница</p>
               <p class="hotel-card__price">От 4000 ₽</p>
-              <a class="hotel-card__detail button-link link-reset" href="#">Подробнее</a>
-              <button class="hotel-card__button button-reset" type="button">В избранное</button>
+              <a class="hotel-card__detail button_brown button-link link-reset">Подробнее</a>
+              <button class="hotel-card__button button_blue button" type="button">В избранное</button>
               <p class="hotel-card__stars hotel-card__stars--four">
                 <span class="visually-hidden">4 звезды</span>
               </p>
               <p class="hotel-card__rating">Рейтинг: 8,5</p>
             </li>
             <li class="catalog__hotels-item hotel-card">
-              <a class="hotel-card__link link-reset" href="#">
-                <img class="hotel-card__image" src="#" alt="Фотография гостиницы">
-              </a>
-              <a class="hotel-card__title" href="#">
-                <h3 class="hotel-card__title">Villas at Poco Diablo</h3>
-              </a>
+              <img class="hotel-card__image" src="img/catalog-card-hotel-2@2x.jpg" width="300" height="212" alt="Фотография гостиницы">
+              <h3 class="hotel-card__title">Villas at Poco Diablo</h3>
               <p class="hotel-card__type">Гостиница</p>
               <p class="hotel-card__price">От 5000 ₽</p>
-              <a class="hotel-card__detail button-link link-reset" href="#">Подробнее</a>
-              <button class="hotel-card__button hotel-card__button--checked button-reset" type="button">В избранном</button>
+              <a class="hotel-card__detail button_brown button-link link-reset">Подробнее</a>
+              <button class="hotel-card__button button_green button" type="button">В избранном</button>
               <p class="hotel-card__stars hotel-card__stars--four">
                 <span class="visually-hidden">4 звезды</span>
               </p>
               <p class="hotel-card__rating">Рейтинг: 9,2</p>
             </li>
             <li class="catalog__hotels-item hotel-card">
-              <a class="hotel-card__link link-reset" href="#">
-                <img class="hotel-card__image" src="#" alt="Фотография гостиницы">
-              </a>
-              <a class="hotel-card__title" href="#">
-                <h3 class="hotel-card__title">Desert Quail Inn</h3>
-              </a>
+              <img class="hotel-card__image" src="img/catalog-card-hotel-3@2x.jpg" width="300" height="212" alt="Фотография гостиницы">
+              <h3 class="hotel-card__title">Desert Quail Inn</h3>
               <p class="hotel-card__type">Гостиница</p>
               <p class="hotel-card__price">От 2500 ₽</p>
-              <a class="hotel-card__detail button-link link-reset" href="#">Подробнее</a>
-              <button class="hotel-card__button button-reset" type="button">В избранное</button>
+              <a class="hotel-card__detail button_brown button-link link-reset">Подробнее</a>
+              <button class="hotel-card__button button_blue button" type="button">В избранное</button>
               <p class="hotel-card__stars hotel-card__stars--three">
                 <span class="visually-hidden">3 звезды</span>
               </p>
               <p class="hotel-card__rating">Рейтинг: 6,9</p>
             </li>
             <li class="catalog__hotels-item hotel-card">
-              <a class="hotel-card__link link-reset" href="#">
-                <img class="hotel-card__image" src="#" alt="Фотография гостиницы">
-              </a>
-              <a class="hotel-card__title" href="#">
-                <h3 class="hotel-card-title">GreenTree Inn</h3>
-              </a>
+              <img class="hotel-card__image" src="img/catalog-card-hotel-4@2x.jpg" width="300" height="212" alt="Фотография гостиницы">
+              <h3 class="hotel-card__title">GreenTree Inn</h3>
               <p class="hotel-card__type">Гостиница</p>
-              <p class="hotel-card__price">От 3000 ₽</p>
-              <a class="hotel-card__detail button-link link-reset" href="#">Подробнее</a>
-              <button class="hotel-card__button button-reset" type="button">В избранное</button>
+              <p class="hotel-card__price">От 1500 ₽</p>
+              <a class="hotel-card__detail button_brown button-link link-reset">Подробнее</a>
+              <button class="hotel-card__button button_blue button" type="button">В избранное</button>
               <p class="hotel-card__stars hotel-card__stars--two">
-                <span class="visually-hidden">2 звезды</span>
+                <span class="visually-hidden">4 звезды</span>
               </p>
               <p class="hotel-card__rating">Рейтинг: 5,0</p>
             </li>
